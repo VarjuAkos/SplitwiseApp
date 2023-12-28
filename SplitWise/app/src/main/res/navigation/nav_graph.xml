@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/eventsFragment">
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="hu.bme.aut.android.hf.splitwise.presentation.events.EventsFragment"
+        android:label=" " >
+        <action
+            app:destination="@id/newEventFragment"
+            android:id="@+id/action_fromEventsFragment_to_NewEventFragment"/>
+        <action
+            android:id="@+id/action_eventsFragment_to_expenseFragment"
+            app:destination="@id/expenseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newEventFragment"
+        android:name="hu.bme.aut.android.hf.splitwise.presentation.new_event.NewEventFragment"
+        android:label=" " >
+        <action
+            android:id="@+id/action_newEventFragment_to_expenseFragment"
+            app:destination="@id/expenseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expenseFragment"
+        android:name="hu.bme.aut.android.hf.splitwise.presentation.expenses.ExpenseFragment"
+        android:label="ExpenseFragment" >
+        <action
+            android:id="@+id/action_expenseFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="hu.bme.aut.android.hf.splitwise.presentation.transaction.TransactionFragment"
+        android:label="TransactionFragment" >
+        <action
+            android:id="@+id/action_transactionFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+    </fragment>
+</navigation>
