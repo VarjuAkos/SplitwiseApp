@@ -1,0 +1,2 @@
+# SplitwiseApp
+MobWeb nagyházi - SplitwiseApp
